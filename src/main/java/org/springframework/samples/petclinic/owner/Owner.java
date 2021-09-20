@@ -59,11 +59,6 @@ public class Owner extends Person {
 	@Digits(fraction = 0, integer = 10)
 	private String telephone;
 
-	@Column(name = "age")
-	@NotEmpty
-	@Digits(fraction = 0, integer = 10)
-	private String age;
-
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
 	private Set<Pet> pets;
 
@@ -73,14 +68,6 @@ public class Owner extends Person {
 
 	public void setAddress(String address) {
 		this.address = address;
-	}
-
-	public String getAge() {
-		return this.age;
-	}
-
-	public void setAge(String age) {
-		this.age = age;
 	}
 
 	public String getCity() {
